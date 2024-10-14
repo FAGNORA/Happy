@@ -26,7 +26,7 @@ logo_WHR = Image.open('WHR.gif')
 image_Panneau= Image.open('photo test.gif')
 Logo_internet = Image.open('Internet.jpeg')
 bonheur= Image.open('bonheur.gif')
-bandeau= Image.open('bandeau.jpeg'
+bandeau= Image.open('bandeau.jpeg')
 
 #2 - Daframe
 
