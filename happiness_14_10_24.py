@@ -30,11 +30,14 @@ bandeau= Image.open('bandeau.jpeg')
 
 #2 - Daframe
 
-df=pd.read_csv("world-happiness-report.csv")
-df_2021=pd.read_csv("world-happiness-report-2021.csv")
-df_global = pd.read_csv("C:/Users/fatim/Documents/df_global.csv")
+#df=pd.read_csv("world-happiness-report.csv")
+#df_2021=pd.read_csv("world-happiness-report-2021.csv")
+#df_global = pd.read_csv("C:/Users/fatim/Documents/df_global.csv")
 # Charger les fichiers CSV depuis GitHub
-
+# Charger les fichiers CSV depuis GitHub
+df = pd.read_csv("https://raw.githubusercontent.com/FAGNORA/Hapiness_World_Report/main/world-happiness-report.csv")
+df_2021 = pd.read_csv("https://raw.githubusercontent.com/FAGNORA/Hapiness_World_Report/main/world-happiness-report-2021.csv")
+df_global = pd.read_csv("https://raw.githubusercontent.com/FAGNORA/Hapiness_World_Report/main/df_global.csv")
 # **************************************************************Création des pages et des titres************************
 pages=["Introduction","Exploration", "DataVisualization", "Pré Processing", "Modélisation", "Conclusion"]
 #***************************************************************** Sidebar***********************************************
