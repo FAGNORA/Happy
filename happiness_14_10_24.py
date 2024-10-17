@@ -336,6 +336,28 @@ if page == pages[2] :
     # Fusionner les occurrences avec le DataFrame d'origine pour la visualisation
     df = df.merge(response_counts, on='year')
 
+    # Création de la figure
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+
+    # Tracer le 1er graphique (Life Ladder)
+    sns.lineplot(x='year', y='Life Ladder', data=df, ax=ax1, color='b', label='Life Ladder')
+    ax1.set_ylabel("Indice de Vie (Life Ladder)", color='b')
+    ax1.tick_params(axis='y', labelcolor='b')
+    ax1.set_title("Évolution de l'Indice de Vie et du Nombre de Réponses")
+
+    # Création d'un deuxième axe Y pour le nombre de réponses
+
+    ax2 = ax1.twinx()  # Créer un axe Y secondaire
+    sns.lineplot(x='year', y='Number of Responses', data=df, ax=ax2, color='g', label='Nombre de Réponses')
+    ax2.set_ylabel("Nombre de Réponses", color='g')
+    ax2.tick_params(axis='y', labelcolor='g')
+
+    # Ajout d'une légende
+    ax1.legend(loc='upper left')
+    ax2.legend(loc='upper right')
+
+    # Afficher le graphique dans Streamlit
+    st.pyplot(fig)
 
 
     st.markdown("""
@@ -430,15 +452,29 @@ if page == pages[2] :
 #***** Fin Insersion nuage de point
 
 
-
-
-
     ax =px.box(df_2021,y = 'Ladder score',x = "Regional indicator",color = "Regional indicator")
     st.plotly_chart(ax)
+# Afficher le graphique dans Streamlit
+st.pyplot(fig)
+
+# Sauvegarder le graphique sous forme d'image
+from io import BytesIO
+buf = BytesIO()
+plt.savefig(buf, format='png')
+buf.seek(0)
+
+# Bouton pour télécharger l'image
+st.download_button(
+    label="Télécharger le graphique",
+    data=buf,
+    file_name="evolution_bonheur.png",
+    mime="image/png"
+)
 
 
 
-
+# =====================================================================================Fin de la page DataVizualization  =====================================
+#
 # =====================================================================================Fin de la page DataVizualization  =====================================
 #
 #
