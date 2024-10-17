@@ -306,7 +306,7 @@ if page == pages[1] :
 
 #  ....................................................................................  Fin de la page Modélisation  ..........................................
 #                                                                                        Debut de la CONCLUSION
-if page == pages[4] : 
+if page == pages[2] : 
     st.markdown(
         f"""
         <div style="
@@ -351,7 +351,7 @@ if page == pages[4] :
     new_image = bonheur.resize((1500, 1500))
     st.image(new_image, caption='Analyse du Bonheur', use_column_width=True)
     #                                                                                        Debut de la CONCLUSION
-if page == pages[5] : 
+if page == pages[3] : 
     st.markdown(
         f"""
         <div style="
