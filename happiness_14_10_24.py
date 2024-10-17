@@ -348,5 +348,5 @@ if page == pages[4] :
     """, unsafe_allow_html=True)
 
     # Affichage de l'image
-    new_image = bonheur.resize((1500, 1500))
+    new_image = Bonheur.resize((1500, 1500))
     st.image(new_image, caption='Analyse du Bonheur', use_column_width=True)
