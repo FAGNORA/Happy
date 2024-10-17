@@ -350,3 +350,49 @@ if page == pages[4] :
     # Affichage de l'image
     new_image = bonheur.resize((1500, 1500))
     st.image(new_image, caption='Analyse du Bonheur', use_column_width=True)
+    #                                                                                        Debut de la CONCLUSION
+if page == pages[5] : 
+    st.markdown(
+        f"""
+        <div style="
+        border: 2px solid #b80691; 
+        padding: 0px; 
+        border-radius: 50px;
+        background-color: #f5b74c;
+        text-align:center;">
+        <h3 style="color:purple;font-size:30px">Conclusion</h3>
+
+    """, unsafe_allow_html=True)
+    st.markdown('<h3 style="color:purple;"> </h3>', unsafe_allow_html=True)
+
+
+    # Conclusion
+    st.markdown('<h3 style="color:purple;">Peut-on prédire le bonheur ?</h3>', unsafe_allow_html=True)
+    st.markdown("""
+    <p style="text-align: justify; font-size:15px;">
+    L'exclusion des variables 'Country Name' et 'Regional Indicator' a conduit à une dégradation 
+    des performances des deux modèles, suggérant que ces variables apportaient des informations 
+    importantes pour prédire la variable cible. Il est donc recommandé de conserver les variables 
+    'Country name' et 'Regional indicator' dans les modèles, sauf si une simplification est impérative 
+    pour d'autres raisons (comme la réduction du temps de calcul ou la simplification du modèle).
+    </p>
+    """, unsafe_allow_html=True)
+
+    st.markdown('<h3 style="color:purple;">Pour conclure sur cette partie</h3>', unsafe_allow_html=True)
+    st.markdown("""
+    <p style="text-align: justify; font-size:15px;">
+    En conclusion, bien que l'exclusion de variables puisse parfois simplifier le modèle, dans ce 
+    cas particulier, ces variables semblent contenir des informations cruciales pour la 
+    prédiction du bonheur. Il serait judicieux d'explorer davantage pourquoi ces variables sont 
+    importantes et de considérer des techniques alternatives pour gérer leur impact sur le modèle tout 
+    en maximisant la précision des prédictions. En ce qui concerne les métriques, la RMSE est recommandée 
+    pour évaluer la précision des prédictions du bonheur. Le Modèle le Plus Performant est le Random Forest, 
+    surtout lorsque les variables 'Country name' et 'Regional indicator' sont incluses. Il a des scores de 
+    MSE, MAE, R², et RMSE meilleurs comparés à Gradient Boosting.
+    </p>
+    """, unsafe_allow_html=True)
+
+    # Affichage de l'image
+    new_image = bonheur.resize((1500, 1500))
+    st.image(new_image, caption='Analyse du Bonheur', use_column_width=True)
+
