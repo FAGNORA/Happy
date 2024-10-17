@@ -454,28 +454,12 @@ if page == pages[2] :
 
     ax =px.box(df_2021,y = 'Ladder score',x = "Regional indicator",color = "Regional indicator")
     st.plotly_chart(ax)
-# Afficher le graphique dans Streamlit
-st.pyplot(fig)
-
-# Sauvegarder le graphique sous forme d'image
-from io import BytesIO
-buf = BytesIO()
-plt.savefig(buf, format='png')
-buf.seek(0)
-
-# Bouton pour télécharger l'image
-st.download_button(
-    label="Télécharger le graphique",
-    data=buf,
-    file_name="evolution_bonheur.png",
-    mime="image/png"
-)
 
 
 
 # =====================================================================================Fin de la page DataVizualization  =====================================
 #
-# =====================================================================================Fin de la page DataVizualization  =====================================
+#
 #
 #
 #  #####################################################################################   Début de la page Pré-processing  #####################################
